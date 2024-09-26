@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 조건문 - if, if ~ else, if ~ else if, switch
+
+      // 시스템 날짜 / 시간 가져오기
+      let date = new Date();
+      console.log(date);
+      console.log(date.getFullYear());
+      console.log(date.getMonth()); // 월 0 시작
+      console.log(date.getDate());
+      console.log(date.getHours());
+      console.log(date.getMinutes());
+      console.log(date.getSeconds());
+
+      if (date.getHours() < 12) {
+        console.log("오전");
+      } else {
+        console.log("오후");
+      }
+
+      // 사용자에게 숫자를 입력받기
+      // 입력받은 숫자가 양, 음 판별하기
+      let input = Number(prompt("숫자 입력"));
+      // input 타입
+      // 숫자 변환: parseInt(), Number()
+      // NaN: Not a Number
+      // isNaN(): NaN 여부 확인
+      console.log("input type = ", typeof input);
+
+      //   console.log(input > 0);
+      if (input > 0) {
+        console.log("양수");
+      } else {
+        console.log("음수");
+      }
+    </script>
+  </body>
+</html>

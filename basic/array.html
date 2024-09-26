@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 배열
+      // 1. 생성
+      const cars = ["버스", "자동차", "택시"];
+      const cars2 = new Array("버스", "자동차", "택시");
+
+      // 2. 메소드
+      console.log("1. 배열 크기 ", cars.length);
+      console.log("2. 문자열 ", cars.toString()); // ,로 분리해서 문자로 변환
+      console.log("3. 특정 요소 ", cars[1]);
+      // 배열 요소 추가
+      // 1. push(): 맨 뒤에 추가
+      cars.push("멜론");
+      // 2. unshift(): 맨 앞에 추가
+      cars.unshift("딸기");
+      console.log(cars);
+      // 특정 위치 지정: 요소 수정
+      cars[2] = "바나나";
+      console.log(cars);
+      // splice(인덱스, 제거할 요소 개수, 추가할 요소): 삭제 / 추가 사용
+      cars.splice(2, 0, "자동차");
+      console.log(cars);
+
+      // 배열 요소 삭제
+      cars.pop();
+      console.log(cars);
+      cars.shift();
+      console.log(cars);
+      // cars.splice(2); // 지정된 위치부터 끝까지 삭제
+      cars.splice(2, 1); // 지정된 위치부터 지정한 개수만 삭제
+      console.log(cars);
+
+      console.log("지정된 문자열로 요소를 연결 ", cars.join("-"));
+      console.log("다른 배열과 연결 ", cars.concat(cars2));
+      console.log("배열 자르기 ", cars.slice(1, 2));
+      cars.push("강아지");
+      console.log("정렬 전 ", cars);
+      cars.sort(); // 원본 정렬이 일어남
+      console.log("배열 오름차순 정렬(문자) ", cars);
+
+      // toSorted(): 정렬할 배열 새 배열로 생성 => sort함 / 2023버전 추가
+      const months = ["Jan", "Feb", "Mar", "Apr"];
+      const sorted = months.toSorted();
+      console.log("months ", months);
+      console.log("sorted ", sorted);
+
+      //
+      const array1 = [12, 6, 9, 1, 3, 24];
+      array1.sort(function (a, b) {
+        // 오름차순 정렬
+        // return a - b;
+
+        // 내림차순 정렬
+        return b - a;
+      });
+      console.log("배열 정렬(숫자) ", array1);
+
+      // toReversed()
+      console.log("배열 요소 뒤에서 출력 ", cars.reverse());
+      console.log(cars);
+
+      // 검색 메소드: indexOf(), lastIndexOf(), includes()
+      // find()
+      console.log("인덱스 찾기 ", cars.indexOf("자동차"));
+      console.log("인덱스 찾기 ", cars.indexOf("망고"));
+      console.log("요소 포함 여부 ", cars.includes("망고"));
+      console.log("요소 포함 여부 ", cars.includes("자동차"));
+
+      // array1.find(특정 조건과 일치하는 요소 찾기: 함수 구성)
+      // 5보다 큰 제일 첫번째 숫자
+      console.log(array1);
+      console.log(
+        "5보다 큰 제일 첫번째 숫자 ",
+        array1.find((item) => item > 5)
+      );
+      console.log(
+        "5보다 큰 제일 첫번째 숫자 인덱스 ",
+        array1.findIndex((item) => item > 5)
+      );
+
+      // 배열 출력
+      console.log(array1);
+
+      for (let i = 0; i < array1.length; i++) {
+        console.log(array1[i]);
+      }
+
+      for (const element of array1) {
+        console.log(element);
+      }
+
+      array1.forEach((element) => {
+        console.log(element);
+      });
+
+      // 배열 복사
+      const array2 = [];
+      array1.forEach((item) => {
+        array2.push(item);
+      });
+      console.log(array2);
+    </script>
+  </body>
+</html>

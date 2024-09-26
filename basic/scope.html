@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 변수 범위
+      // {}, for(){}
+      // block({}) scope: let, const
+      // function scope: var
+
+      // block 안에 선언된 let 변수를 block 벗어나서 사용 불가
+      {
+        let value1 = 10;
+        var value2 = 15;
+      }
+      // console.log("value1 = ", value1); (X ReferenceError)
+      console.log("value2 = ", value2);
+
+      function fobbar() {
+        var foo = 5;
+        console.log("foo = " + foo);
+      }
+      console.log("foo = " + foo);
+    </script>
+  </body>
+</html>

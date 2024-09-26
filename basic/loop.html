@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 반복문
+      // for
+      // for/in: (객체 출력) / for/of
+      // while
+      // do~while
+
+      for (let i = 0; i < 11; i++) {
+        console.log(i);
+      }
+
+      let j = 0;
+      while (j < 11) {
+        console.log(j);
+        j++;
+      }
+
+      // 배열
+      const fruits = ["사과", "배", "포도", "바나나", "복숭아", "딸기"];
+      for (let index = 0; index < fruits.length; index++) {
+        console.log(fruits[index]);
+      }
+      console.log("");
+      for (const element of fruits) {
+        console.log(element);
+      }
+
+      // break, continue
+      for (let i = 0; i < 11; i++) {
+        if (i === 3) break;
+        console.log(i);
+      }
+
+      for (let i = 0; i < 11; i++) {
+        if (i === 3) continue;
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>
