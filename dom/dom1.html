@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h1>Main Page</h1>
+    </div>
+    <button>네이버로 이동</button>
+    <div>
+      <div>
+        <button class="prev">이전</button>
+        <button class="next">다음</button>
+        <button class="go">지정한 만큼</button>
+      </div>
+    </div>
+    <script>
+      // BOM(Browser Object Model)
+      // 1. Window Object - DOM
+      // 2. Location Object
+      // 3. History Object
+      // DOM(Document Object Model): 문서 객체 모델(DOM)은 메모리에 웹 페이지 문서 구조를 표현
+
+      // 새창 띄우기
+      // window.open("https://www.naver.com");
+      //   window.open(
+      //     "./popup.html",
+      //     "",
+      //     "width=410, height=420, left=300, top=500"
+      //   );
+
+      // 버튼 클릭 시 네이버로 이등
+      // 1) windows를 이용해서 button 찾기
+      // window.document.querySelector("button");
+      const btn = document.querySelector("button");
+      // console.log(btn);
+      // 2) 클릭(이벤트) => 이벤트 리스너 주착
+      //   btn.addEventListener("click", function () {});
+      btn.addEventListener(
+        "click",
+        () => (location.href = "https://www.naver.com")
+      );
+
+      // 이전 버튼 클릭 시 history 이전 페이지로 이동
+      const prev = document.querySelector(".prev");
+      prev.addEventListener("click", () => history.back());
+      // 다음 버튼 클릭 시 history 다음 페이지로 이동
+      const next = document.querySelector(".next");
+      next.addEventListener("click", () => history.forward());
+      // 지정한 만큼
+      const go = document.querySelector(".go");
+      go.addEventListener("click", () => history.go(-2));
+    </script>
+  </body>
+</html>

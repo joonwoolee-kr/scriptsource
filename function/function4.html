@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const greeting = (name) => console.log(`Hello! ${name}`);
+      greeting("Hong");
+
+      const materials = ["Hydrogen", "Helium", "Lithium", "Beryllium"];
+      materials.forEach((element) => {
+        console.log(element);
+      });
+
+      const array1 = [15, 6, 9, 13, 22, 27];
+      // 20보다 큰 첫번째 요소 출력
+      array1.find(function (item) {
+        if (item > 20) {
+          return item;
+        }
+      });
+      array1.find((item) => item > 20);
+      array1.findIndex((item) => item > 20);
+
+      // map(): react에서 주로 사용
+      // 배열 안의 모든 요소에 대해 function을 적용한 후 새로운 배열로 리턴
+      const array2 = [1, 4, 9, 16];
+      console.log(array2.map(Math.sqrt));
+
+      console.log(array2.map((x) => x * 2));
+
+      // filter()
+      console.log(array1.filter((x) => x > 10));
+    </script>
+  </body>
+</html>

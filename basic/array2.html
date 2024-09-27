@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const numArr = [52, 273, 586, 32, 57, 103, 312, 2];
+      // q1) 최소값과 최대값 출력
+      // console.log(
+      //   "최소값 ",
+      //   numArr.sort(function (a, b) {
+      //     return a - b;
+      //   })[0]
+      // );
+      // console.log("최대값 ", numArr[numArr.length - 1]);
+
+      let max = numArr[0],
+        min = numArr[0];
+
+      for (let i = 0; i < numArr.length; i++) {
+        if (numArr[i] > max) max = numArr[i];
+        if (numArr[i] < min) min = numArr[i];
+      }
+      console.log("max ", max);
+      console.log("min ", min);
+      document.write("max ", max, "<br>");
+      document.write("min ", min, "<br>");
+
+      // q2) 사용자에게 한글로 된 행성 이름을 입력 받은 후 영어로 된 행성 이름 출력
+      const planetKor = [
+        "수성",
+        "금성",
+        "지구",
+        "화성",
+        "목성",
+        "토성",
+        "천왕성",
+        "해왕성",
+      ];
+      const planetEng = [
+        "Mercury",
+        "Mercury",
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Neptune",
+      ];
+
+      let input = prompt("행성 이름 입력");
+      console.log("영어 행성 이름 ", planetEng[planetKor.indexOf(input)]);
+      document.write("영어 행성 이름 ", planetEng[planetKor.indexOf(input)]);
+    </script>
+  </body>
+</html>

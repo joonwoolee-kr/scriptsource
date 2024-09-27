@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 변수 hoisting: 선언되지 않은 변수를 끌어올려서 실행
+      // var
+      // let, const: 변수 hoisting 불가
+      // console.log("z ", z);
+      // var z = 10;
+      const z = 10;
+
+      // 함수 정의 방식 비교
+      // 함수 hoisting: 선언되지 않은 함수를 끌어올려서 실행
+      const result = multiply(5, 3);
+      console.log("result = ", result);
+
+      function multiply(x, y) {
+        return x * y;
+      }
+
+      // ReferenceError: let, const keyword에 함수 담는 방식에서는
+      // hoisting 허용 안 됨
+      // multiply2(5, 6);
+      const multiply2 = (a, b) => a * b;
+    </script>
+  </body>
+</html>

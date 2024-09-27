@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>동적으로 dom 생성하기</h1>
+    <div id="test">
+      <p>반갑습니다</p>
+    </div>
+    <script>
+      // 1. 자바스크립트로 DOM 접근하기
+      // 2. DOM 동적 생성
+      const p = "<p>안녕하세요</p>";
+
+      // document.getElementById() or document.querySelector()
+      const div = document.getElementById("test");
+      console.log(div);
+
+      // 1. 위치 - beforeend: 닫는 태그 바로 앞에 삽입
+      //           afterbegin: 시작 태그 바로 뒤에 삽입
+      //           afterend: 태그가 끝난 후 다음 형제 요소
+      //           beforebegin: 태그 이전 형제 요소
+      //   div.insertAdjacentElement("beforeend", p);
+      div.insertAdjacentHTML("beforebegin", p);
+      //   div.insertAdjacentText("beforeend", p);
+    </script>
+  </body>
+</html>

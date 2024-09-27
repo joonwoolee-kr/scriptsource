@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="header1">Header1</h1>
+    <h2 id="header2">Header2</h2>
+    <form action="" method="get">
+      <div>
+        <label for="username">이름</label>
+        <input type="text" name="username" id="username" />
+      </div>
+      <div>
+        <button>전송</button>
+      </div>
+    </form>
+    <form action="" method="get"></form>
+    <script>
+      // DOM(Document Object Model): 문서 객체 모델(DOM)은 메모리에 웹 페이지 문서 구조를 표현
+      // 1. 자바스크립트로 DOM 접근하기
+      // 1) 아이디로 찾아오기
+      const header1 = document.getElementById("header1");
+      const header2 = document.getElementById("header2");
+
+      console.log(header1);
+      console.log(header2);
+
+      // h1 태그의 text 값 출력
+      console.log(header1.innerHTML);
+      console.log(header1.innerText);
+      console.log(header1.textContent);
+
+      // h2 태그의 text 값 변경
+      header2.innerHTML = "<i>getElementById()</i>";
+      //   header2.innerText = "<i>getElementById()</i>";
+      //   header2.textContent = "<i>getElementById()</i>";
+
+      const name = document.getElementById("username");
+      console.log(name);
+
+      // 이벤트(submit) 리스너 => form
+      // 2) 태그명으로 찾기: 배열 개념
+      // 3) HTMLCollection
+      // const form = document.getElementsByTagName("form");
+      // console.log(form[0]);
+
+      // querySelector(css 선택자 모두 가능)
+      // document.querySelector("#header1");
+      // document.querySelector(".header1");
+      // css 선택자가 제일 먼저 만나는 요소로 찾아옴
+      const form = document.querySelector("form");
+      console.log(form);
+
+      form.addEventListener("submit", (e) => {
+        // submit 중지
+        e.preventDefault();
+        // 이름 입력값 가져와서 출력
+        const username = document.querySelector("#username");
+        // form 요소의 값: value
+        // 일반 요소의 text: innerHTML, innerText, textContent
+        console.log(username.value);
+      });
+    </script>
+  </body>
+</html>

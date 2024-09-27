@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 자바스크립트 내장함수
+      // alert()
+      // isNaN()
+      // parseInt("숫자") or Number("숫자"): 숫자
+      // parsFloat()
+      // prompt()
+
+      // URL(Uniform Resource Locator): 주소
+      // URI(Uniform Resource Identifier): 식별 => URL 포함하는 개념
+      //                                   http://localhost:5500/basic/category/12
+
+      // encodeURI(): 영문, 숫자, 일부기호(:,/,?...)만 제외 후 나머지 인코딩
+      document.write(
+        encodeURI("http://localhost:5500/basic/info.html?name=홍길동")
+      );
+      document.write("<br>");
+      // encodeURIComponent(): 영문, 숫자만 제외 후 나머지 인코딩
+      document.write(
+        encodeURIComponent(
+          "http://localhost:5500/basic/info.html?name=홍길동&age=15"
+        )
+      );
+      document.write("<br>");
+      // 디코딩
+      document.write(
+        decodeURI(
+          "http://localhost:5500/basic/info.html?name=%ED%99%8D%EA%B8%B8%EB%8F%99"
+        )
+      );
+      document.write("<br>");
+      document.write(
+        decodeURIComponent(
+          "http%3A%2F%2Flocalhost%3A5500%2Fbasic%2Finfo.html%3Fname%3D%ED%99%8D%EA%B8%B8%EB%8F%99%26age%3D15"
+        )
+      );
+
+      // ms
+      // setTimeout(() => {
+      //   alert("3초가 지났습니다");
+      // }, 3000);
+
+      // setInterval(() => {
+      //   console.log("안녕!!");
+      // }, 2000);
+    </script>
+  </body>
+</html>
