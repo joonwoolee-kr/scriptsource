@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* body {
+        background-color: blue;
+      } */
+    </style>
+  </head>
+  <body>
+    <form action="" method="get">
+      <input type="radio" name="color" id="" value="lightblue" />
+      <label for="">파랑</label>
+      <input type="radio" name="color" id="" value="green" />
+      <label for="">녹색</label>
+    </form>
+    <script>
+      // 사용자가 선택한 값에 따라 body 배경색 변경
+      // 이벤트 대상 찾기
+      // querySelector(선택자): 선택자와 일치하는 첫번째 요소만 찾기
+      //   const rdo1 = document.querySelector("[type='radio']");
+      //   console.log(rdo1);
+      //   rdo1.addEventListener("click", () => {
+      //     document.body.style.backgroundColor = "lightblue";
+      //   });
+
+      //   const rdo2 = document.querySelector("form input:nth-child(3)");
+      //   console.log(rdo2);
+      //   rdo2.addEventListener("click", () => {
+      //     document.body.style.backgroundColor = "green";
+      //   });
+
+      // 선택자가 동일한 모든 요소 찾기 => NodeList 구조
+      //   const rdos = document.querySelectorAll("[type='radio']");
+      //   console.log(rdos);
+
+      //   console.log(rdos[0]);
+      //   console.log(rdos[1]);
+
+      //   rdos[0].addEventListener("click", () => {
+      //     document.body.style.backgroundColor = "lightblue";
+      //   });
+      //   rdos[1].addEventListener("click", () => {
+      //     document.body.style.backgroundColor = "green";
+      //   });
+
+      //   rdos.forEach((rdo) => {
+      //     rdo.addEventListener("click", (e) => {
+      //       document.body.style.backgroundColor = e.target.value;
+      //     });
+      //   });
+
+      const rdos = document.querySelector("form");
+      rdos.addEventListener(
+        "click",
+        (e) => (document.body.style.backgroundColor = e.target.value)
+      );
+    </script>
+  </body>
+</html>

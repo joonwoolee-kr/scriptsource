@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="./bg.png" alt="" />
+    <button>이미지 변경</button>
+    <div>
+      <button>Turn on the Light</button>
+      <img src=".\pic_bulboff.gif" alt="" />
+      <button>Turn off the Light</button>
+    </div>
+    <script>
+      // img src변경하기
+      // document.querySelector("img").src = "./2.jpg";
+      // setAttribute() 메소드 사용
+      // document.querySelector("img").setAttribute("src", "2.jpg");
+
+      // 버튼 클릭시 img 요소의 src를 2.jpg로 이미지 변경
+      document
+        .querySelector("button")
+        .addEventListener(
+          "click",
+          () => (document.querySelector("img").src = "./2.jpg")
+        );
+
+      // turn on  => bulbon.gif / turn off => bulboff.gif
+      const img = document.querySelector("div img");
+      //   const light = document.querySelectorAll("div button");
+      //   light[0].addEventListener("click", () => {
+      //     img.src = ".\\pic_bulbon.gif";
+      //   });
+      //   light[1].addEventListener("click", () => {
+      //     img.src = ".\\pic_bulboff.gif";
+      //   });
+
+      // 이벤트 버블링
+      const div = document.querySelector("div");
+      div.addEventListener("click", (e) => {
+        // 어느 자식 버튼에서 이벤트가 발생하였는가?
+        console.log(e.target.innerHTML);
+        if (e.target.innerHTML == "Turn off the Light") {
+          img.src = ".\\pic_bulboff.gif";
+        } else {
+          img.src = ".\\pic_bulbon.gif";
+        }
+      });
+    </script>
+  </body>
+</html>
