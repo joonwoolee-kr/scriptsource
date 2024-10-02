@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" method="get">
+      <input type="text" name="num1" id="num1" size="10" />
+      +
+      <input type="text" name="num2" id="num2" size="10" />
+      =
+      <input type="text" name="result" id="result" size="10" />
+      <button type="button">계산</button>
+    </form>
+    <form action="" method="get">
+      <input type="text" name="num3" id="num3" size="10" />
+      <select name="op" id="op">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="text" name="num4" id="num4" size="10" />
+      =
+      <input type="text" name="result2" id="result2" size="10" />
+      <button type="button">계산</button>
+    </form>
+    <script>
+      // num1과 num2의 값을 입력 후 계산 버튼 클릭 시 +한 결과를 result에 보여주기
+      document.querySelector("button").addEventListener("click", () => {
+        document.querySelector("#result").value =
+          Number(document.querySelector("#num1").value) +
+          Number(document.querySelector("#num2").value);
+      });
+
+      document
+        .querySelector("form:nth-child(2) button")
+        .addEventListener("click", () => {
+          const num3 = Number(document.querySelector("#num3").value);
+          const num4 = Number(document.querySelector("#num4").value);
+          result = 0;
+
+          switch (document.querySelector("#op").value) {
+            case "+":
+              result = num3 + num4;
+              break;
+            case "-":
+              result = num3 - num4;
+              break;
+            case "*":
+              result = num3 * num4;
+              break;
+            case "/":
+              result = num3 / num4;
+              break;
+
+            default:
+              break;
+          }
+          document.querySelector("#result2").value = result;
+        });
+    </script>
+  </body>
+</html>

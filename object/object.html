@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 자바스크립트 객체
+      // 기본제공: String, Math, Number, Date
+      // 커스텀 객체:
+      const person = {
+        name: ["bob", "smith"],
+        age: 32,
+        gender: "male",
+        interests: ["music", "skiing"],
+        greeting: function () {
+          alert("Hi!! I'm " + this.name[0] + ".");
+        },
+      };
+
+      console.log(person.name);
+      console.log(person.name[0]);
+      console.log(person.gender);
+      //   console.log(person.greeting());
+
+      const person2 = {
+        name: {
+          first: "bob",
+          last: "smith",
+        },
+        age: 32,
+        gender: "male",
+        interests: ["music", "skiing"],
+        greeting: function () {
+          alert("Hi!! I'm " + this.name[0] + ".");
+        },
+      };
+
+      console.log(person2.name);
+      console.log(person2["name"]);
+      console.log(person2.name.first);
+      console.log(person2.name.last);
+
+      const arr = [
+        { name: "아이오닉", model: "IONIQ5", weight: 500, color: "black" },
+        { name: "산타페", model: "SANTAFE", weight: 500, color: "black" },
+        { name: "그랜저", model: "GRANDEUR", weight: 500, color: "black" },
+      ];
+      console.log(arr[0]);
+      console.log(arr[0].color);
+      console.log(arr[0].name);
+
+      arr.forEach((car) => {
+        console.log("이름 ", car.name);
+        console.log("모델 ", car.model);
+        console.log("색상 ", car.color);
+      });
+    </script>
+  </body>
+</html>

@@ -60,11 +60,22 @@
     <script>
       // badge 클릭 시 bg-dark 클래스명이 있으면 bg-warning 변경
       const badge = document.querySelector(".badge");
+      const body = document.querySelector("body");
       badge.addEventListener("click", (e) => {
         if (e.target.classList.contains("bg-dark")) {
           badge.classList.replace("bg-dark", "bg-warning");
+          // 글자색 흰색, 글자 Light 🔁
+          badge.style.color = "black";
+          badge.innerText = "Light 🔁";
+          // body.style.backgroundColor = "black";
+          body.classList.add("bg-dark");
         } else {
           badge.classList.replace("bg-warning", "bg-dark");
+          // 글자색 검정색, 글자 Dark 🔁
+          badge.style.color = "white";
+          badge.innerText = "Dark 🔁";
+          // body.style.backgroundColor = "white";
+          body.classList.remove("bg-dark");
         }
       });
       // badge 클릭 시 bg-warning 클래스명이 있으면 bg-dark 변경

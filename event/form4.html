@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <a href="https://www.naver.com">네이버</a>
+    </div>
+    <form action="" method="get">
+      <div>
+        <label for="username">이름</label>
+        <input type="text" name="username" id="username" />
+      </div>
+      <div>
+        <label for="password">비밀번호</label>
+        <input type="text" name="password" id="password" />
+      </div>
+      <div>
+        <label for="age">나이</label>
+        <input type="text" name="age" id="age" />
+      </div>
+      <div>
+        <button type="submit">전송</button>
+      </div>
+      <script>
+        // a 태그 클릭 시 이벤트 중지
+        document.querySelector("a").addEventListener("click", (e) => {
+          // a, submit, reset 이벤트 중지: preventDefault()
+          e.preventDefault();
+
+          // a 요소의 속성 값 가져오기
+          console.log(e.target); // 이벤트가 일어난 대상 == document.querySelector("a")
+          console.log(e.target.href);
+
+          // a 요소의 속성을 구글로 변경 후 구글로 이동
+          e.target.href = "https://www.google.com";
+          location.href = e.target.href;
+        });
+
+        // form submit 되기 전 모든 input 안 요소가 입력이 되었는지 확인
+        // username이 없는 경우: 경고창 띄우기(이름 입력하세요)
+        // password가 없는 경우: 경고창 띄우기(비밀번호 입력하세요)
+        // age가 없는 경우: 경고창 띄우기(나이 입력하세요)
+        document.querySelector("form").addEventListener("submit", (e) => {
+          // submit 중지
+          e.preventDefault();
+          const username = document.querySelector("#username");
+          const password = document.querySelector("#password");
+          const age = document.querySelector("#age");
+
+          // 입력 유효성 검사
+          if (username.value == "") {
+            alert("이름 입력하세요");
+            username.focus();
+            return;
+          } else if (password.value == "") {
+            alert("비밀번호 입력하세요");
+            password.focus();
+            return;
+          } else if (age.value == "") {
+            alert("나이 입력하세요");
+            age.focus();
+            return;
+          }
+
+          // 유효성 검사 통과 후 원래 하려던 작업 하기 => submit
+          document.querySelector("form").submit();
+        });
+      </script>
+    </form>
+  </body>
+</html>
