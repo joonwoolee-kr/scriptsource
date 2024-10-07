@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Header 1</h1>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <script>
+      // jquery : 자바스크립트 라이브러리
+      //          예전에 자바스크립트가 브라우저(IE, Edge, Chrome ) 마다 다른 동작방식을 보임 => 자바스크립트 버전 변경으로 해결됨
+      //          ajax 사용할 때 코드의 복잡성 => fetch, axios 함수 사용으로 많이 쉬워짐
+
+      // 예전 : 웹 개발 시 자바스크립트가 필요하다면 순수 javascript로 할 것인가? jquery 사용 할 것인가? 선택
+      // 현재 : 순수 javascript 기반(예전 사이트들은 jquery 남아 있다)
+
+      // 순수 자바스크립트 코드
+      const header1 = document.querySelector("h1");
+      console.log(header1);
+      // text변경
+      header1.innerHTML = "변경된 텍스트";
+      header1.innerText = "변경된 텍스트";
+      // style 변경
+      header1.style.color = "red";
+
+      // jQuery 코드
+      const header2 = $("h1");
+      console.log(header2);
+      //header2.text("변경된 텍스트2"); // innerText
+      header2.html("변경된 텍스트2"); // innerHTML
+      header2.css("color", "green");
+    </script>
+  </body>
+</html>

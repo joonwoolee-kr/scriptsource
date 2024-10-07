@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      RegExr was created by gskinner.com. Edit the Expression & Text to see
+      matches. Roll over matches or the expression for details. PCRE &
+      JavaScript flavors of RegEx are supported. Validate your expression with
+      Tests mode. The side bar includes a Cheatsheet, full Reference, and Help.
+      You can also Save & Share with the Community and view patterns you create
+      or favorite in My Patterns. edit the Expression & Text to see matches.
+      Roll over matches or the expression for details. PCRE & JavaScript flavors
+      of RegEx are supported. Validate your expression with Tests mode. Explore
+      results with the Tools below. Replace & List output custom results.
+      Details lists capture groups. Explain describes your expression in plain
+      English.
+    </p>
+    <script>
+      // Regex(Regular Expression : 정규 표현식)
+      // 특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 형식 언어
+      // 자바, 자바스크립트, 파이썬과 같은 언어에서 사용 가능
+
+      // replace(찾아야 할 문자열, 변경 문자열)
+      // 찾아야 할 문자열 : r(단순 문자열), r 시작할 수 있고, 두번째 문자는 o, 세번째는 숫자가 3-5 숫자가 오는..
+
+      const reg = /Edit/gi;
+
+      const content = document.querySelector("p").textContent;
+
+      // content 안에 reg 패턴이 들어있느냐?
+      // exec(), test(), match(), search()
+      // exec() : 문자열에서 일치하는 정보를 배열로 알려줌
+      console.log(reg.exec(content));
+      let arr;
+      while ((arr = reg.exec(content)) !== null) {
+        console.log(`${arr[0]}`);
+      }
+    </script>
+  </body>
+</html>
