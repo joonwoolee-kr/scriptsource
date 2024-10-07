@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      span {
+        font-size: 0.8em;
+      }
+      .small {
+        color: green;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <form action="" method="get">
+        <div class="mb-3 row">
+          <label for="name" class="col-sm-2 col-form-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="name" name="name" />
+            <span class="small">이름은 한글 2~5자리로 입력해야 합니다.</span>
+            <span class="error d-block"></span>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label">Id</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="inputId" name="id" />
+            <span class="small"
+              >아이디는 대소문자/숫자/특수문자(!@#)를 포함하여 6~12자리로
+              입력해야 합니다.</span
+            >
+            <span class="error d-block"></span>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input
+              type="text"
+              class="form-control"
+              id="staticEmail"
+              placeholder="email@example.com"
+              name="email"
+            />
+            <span class="small">이메일 형식에 맞춰서 입력해야 합니다.</span>
+            <span class="error d-block"></span>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label"
+            >Password</label
+          >
+          <div class="col-sm-10">
+            <input
+              type="password"
+              class="form-control"
+              id="inputPassword"
+              name="password"
+            />
+            <span class="small"
+              >비밀번호는 대소문자/숫자/특수문자(!@#_*)를 포함하여 8~12자리로
+              입력해야 합니다.</span
+            >
+            <span class="error d-block"></span>
+          </div>
+        </div>
+        <div class="mb-3 row">
+          <button class="btn btn-success" type="submit">회원가입</button>
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // form이 submit되면
+      // submit 중지
+      // document.querySelector(".btn").addEventListener("submit", (e) => {
+      //   e.preventDefault();
+      //   const idReg =
+      //     /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#])[A-Za-z0-9!@#]{6,12}$/;
+      //   if (!idReg.test(document.querySelector("#inputId").value)) {
+      //     document.querySelectorAll(".error")[0].innerHTML =
+      //       "올바른 아이디를 입력해주세요.";
+      //     return;
+      //   }
+      //   const emailReg =
+      //     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      //   if (!emailReg.test(document.querySelector("#staticEmail").value)) {
+      //     document.querySelectorAll(".error")[1].innerHTML =
+      //       "올바른 이메일을 입력해주세요.";
+      //     return;
+      //   }
+      //   const passwordReg =
+      //     /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#_*])[A-Za-z0-9!@#_*]{8,12}$/;
+      //   if (!passwordReg.test(document.querySelector("#inputPassword").value)) {
+      //     document.querySelectorAll(".error")[2].innerHTML =
+      //       "올바른 비밀번호를 입력해주세요.";
+      //     return;
+      //   }
+      //   document.querySelector(".btn").submit();
+      // });
+
+      // const regExs = [
+      //   /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#])[A-Za-z0-9!@#]{6,12}$/,
+      //   /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      //   /^(?=.*[A-Za-z])(?=.*[0-9])(?=.*[!@#_*])[A-Za-z0-9!@#_*]{8,12}$/,
+      // ];
+
+      // document.querySelector(".btn").addEventListener("submit", (e) => {
+      //   e.preventDefault();
+      //   regExs.forEach(element, (i) => {
+      //     const cs = ["#inputId", "#staticEmail", "#inputPassword"];
+      //     const text = [
+      //       "올바른 아이디를 입력해주세요.",
+      //       "올바른 이메일을 입력해주세요.",
+      //       "올바른 비밀번호를 입력해주세요.",
+      //     ];
+      //     if (!element.test(document.querySelector(cs[i]).value)) {
+      //       document.querySelectorAll(".error")[i].innerHTML = text[i];
+      //       return;
+      //     }
+      //   });
+      //   document.querySelector(".btn").submit();
+      // });
+      // id / password / email 유효성 검증 후 형식에 맞지 않는다면 메세지 추가 error에 표시
+    </script>
+    <script src="./regex5.js"></script>
+  </body>
+</html>

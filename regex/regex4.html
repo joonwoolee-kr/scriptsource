@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const ko = "kokokoko";
+      const koooo = "kooookoooo";
+
+      console.log(ko.match(/(ko)+/));
+      console.log(koooo.match(/(ko)+/));
+
+      const name = "John Smith";
+      const regEx = /(\w+)\s(\w+)/;
+
+      console.log("======== match");
+      console.log(name.match(regEx));
+      //['John Smith', 'John', 'Smith', index: 0, input: 'John Smith', groups: undefined]
+      // 0: John Smith(패턴과 일치하는 문자열) => 돌려받게 되는 값
+      // 1: John => 캡쳐한 값
+      // 2: Smith => 캡쳐한 값
+      console.log("=== 캡쳐링 재사용");
+      const newName = name.replace(regEx, "$2, $1");
+      console.log(newName);
+
+      const str = "javascript";
+      const regEx2 = /(java)(script)/; // 그룹화 + 캡쳐링
+      console.log(str.match(regEx2));
+      // script-java 출력
+      console.log(str.replace(regEx2, "$2-$1"));
+      console.log("==== non capturing");
+      console.log(str.match(/(?:java)(script)/));
+      console.log(str.replace(/(?:java)(script)/, "$2-$1"));
+    </script>
+  </body>
+</html>

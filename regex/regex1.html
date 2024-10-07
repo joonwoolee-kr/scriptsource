@@ -34,10 +34,10 @@
       // content 안에 reg 패턴이 들어있느냐?
       // exec(), test(), match(), search()
       // exec() : 문자열에서 일치하는 정보를 배열로 알려줌
-      console.log(reg.exec(content));
+      // console.log(reg.exec(content));
       let arr;
       while ((arr = reg.exec(content)) !== null) {
-        console.log(`${arr[0]}`);
+        console.log(`Found ${arr[0]} next starts ${reg.lastIndex}`);
       }
     </script>
   </body>

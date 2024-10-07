@@ -1,0 +1,2 @@
+Ajax(Asynchronous Javascript and XML)
+- 비동기적인 웹 애플리케이션 제작을 위해 사용

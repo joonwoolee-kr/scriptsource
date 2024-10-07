@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <h4>정규 표현식과 일치하는 문자열 반환</h4>
+      <p id="exec"></p>
+    </div>
+    <div>
+      <h4>정규 표현식과 일치하는 문자열 존재 여부에 따라 true, false</h4>
+      <p id="test"></p>
+    </div>
+    <div>
+      <h4>정규 표현식과 일치하는 문자열 반환</h4>
+      <p id="match"></p>
+    </div>
+    <div>
+      <h4>정규 표현식과 일치하는 위치 반환</h4>
+      <p id="search"></p>
+    </div>
+    <script>
+      // exec(), test(), match(), search()
+      // exec(): 문자열에서 일치하는 정보를 배열로 알려줌
+      // test(): t / f
+
+      // string 객체가 제공하는 메소드
+      // match()
+      // search
+
+      const source = "Javascript jQuery Ajax";
+      const regEx = /Ajax/;
+
+      document.querySelector("#exec").innerHTML = regEx.exec(source);
+      document.querySelector("#test").innerHTML = regEx.test(source);
+      document.querySelector("#match").innerHTML = source.match(regEx);
+      document.querySelector("#search").innerHTML = source.search(regEx);
+    </script>
+  </body>
+</html>
