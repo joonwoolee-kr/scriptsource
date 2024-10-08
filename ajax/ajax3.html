@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        background-color: lightblue;
+        height: 50px;
+        justify-content: center;
+        align-items: center;
+      }
+      .container li {
+        margin: 0 10px;
+        width: 25%;
+        list-style: none;
+        cursor: pointer;
+      }
+      div {
+        margin: 20px;
+        padding: 20px;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        padding: 10px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="container">
+      <li>메뉴 1</li>
+      <li>메뉴 2</li>
+      <li>메뉴 3</li>
+      <li>메뉴 4</li>
+    </ul>
+    <div>
+      <!-- 아이디 / 이름(name) / email / company bs / phone -->
+    </div>
+    <script>
+      const menuClick1 = () => {
+        // method: get default임
+        fetch("https://joonwoolee-kr.github.io/version.json")
+          .then((result) => result.json())
+          .then((data) => {
+            console.log(data);
+            // div 안에 보여주기
+            // console.log(data.version);
+            let str = "<ul><li>version: " + data.version + "</li>";
+            str += "<li>codename: " + data.codename + "</li></ul>";
+            document.querySelector("div").innerHTML = str;
+          });
+      };
+
+      const menuClick2 = () => {
+        // version2.jason 가져와서 div 안에 보여주기
+        fetch("https://joonwoolee-kr.github.io/version2.json")
+          .then((response) => {
+            if (!response.ok) throw new Error("데이터가 없습니다.");
+
+            return response.json();
+          })
+          .then((data) => {
+            console.log(data);
+
+            let str = "<ul>";
+            data.forEach((element) => {
+              str += "<li>version: " + element.version + "</li>";
+              str += "<li>codename: " + element.codename + "</li>";
+            });
+            str += "</ul>";
+            document.querySelector("div").innerHTML = str;
+          })
+          .catch((error) => alert(error));
+      };
+
+      const menuClick3 = () => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then((response) => response.json())
+          .then((json) => {
+            // 도착한 내용을 table 태그로 만들어서 화면에 보여주기
+            let str = "<table>";
+            str +=
+              "<tr><th>아이디</th><th>이름</th><th>이메일</th><th>회사</th><th>전화번호</th></tr>";
+            json.forEach((element) => {
+              str += `<tr>`;
+              str += `<td>${element.id}</td>`;
+              str += `<td>${element.name}</td>`;
+              str += `<td>${element.email}</td>`;
+              str += `<td>${element.company.bs}</td>`;
+              str += `<td>${element.phone}</td>`;
+              str += `</tr>`;
+            });
+            str += "</table>";
+            document.querySelector("div").innerHTML = str;
+          });
+      };
+
+      // 메뉴 1 클릭 시 서버로 요청(version.json) 보내기
+      document
+        .querySelector(".container li:first-child")
+        .addEventListener("click", menuClick1);
+
+      // 메뉴 2 클릭 시 menuClick2 연결
+      document
+        .querySelector(".container li:nth-child(2)")
+        .addEventListener("click", menuClick2);
+
+      document
+        .querySelector(".container li:nth-child(3)")
+        .addEventListener("click", menuClick3);
+    </script>
+  </body>
+</html>

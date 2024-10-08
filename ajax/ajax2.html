@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="button">데이터 가져오기</button>
+    <div id="result"></div>
+    <script>
+      //   fetch("서버 주소", { method: "post", headers: {} })
+      //     .then((result) => {
+      //       // 서버에서 온 데이터를 적절한 타입으로 변환
+      //     })
+      //     .then((data) => {
+      //       // 첫번째 then에서 넘어온 데이터 화면 처리
+      //     });
+      document.querySelector("button").addEventListener("click", () => {
+        fetch("https://joonwoolee-kr.github.io/data1.txt")
+          .then((response) => {
+            // 응답을 안 할 경우
+            if (!response.ok) {
+              throw new Error("경로를 확인하세요");
+            }
+            return response.text();
+          })
+          .then((data) => {
+            // 서버에서 도착 여부 확인
+            console.log(data);
+
+            // 데이터 화면 처리
+            document.querySelector("#result").innerHTML = data;
+          })
+          .catch((error) => console.log(error));
+      });
+    </script>
+  </body>
+</html>
